@@ -6,6 +6,7 @@ export const SearchPage = () => {
     return (
         <>
             <h1>Search Page</h1>
+            <p>Buscar Miembros en la api de github</p>
         </>
     )
 }
