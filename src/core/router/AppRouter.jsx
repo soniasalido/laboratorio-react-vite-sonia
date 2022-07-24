@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { HomePage } from '../../scenes/homePage.jsx';
 import { LoginPage } from '../../pods/login/loginPage';
 import {AboutPage} from "../../scenes/aboutPage.jsx";
-import {PrivateRouter} from "./privateRouter";
+import {PrivateRouter} from "./PrivateRouter.jsx";
 
 
 

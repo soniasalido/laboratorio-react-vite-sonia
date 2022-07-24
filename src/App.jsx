@@ -1,15 +1,18 @@
 
-import { AppRouter } from "./core/router/appRouter";
+import { AppRouter } from "./core/router/AppRouter.jsx";
+import {AuthProvider} from "./core/auth";
 
 
 function App() {
 
 
-  return (
-    <>
-      <AppRouter />
-    </>
-  )
+    // Usamos el contexto de Autenticación para obtener el estado de autenticación
+    // Está muy arriba para tener acceso al estado de autenticación en cualquier parte de la aplicación
+    return (
+        <AuthProvider>
+            <AppRouter />
+        </AuthProvider>
+    )
 }
 
 export default App

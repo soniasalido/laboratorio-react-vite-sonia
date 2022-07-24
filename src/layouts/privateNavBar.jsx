@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../core/auth/';
 
 export const PrivateNavBar = () => {
 
-    const user = true;
 
     const navigate = useNavigate();
+    const { user, logout } =  useContext(AuthContext);
 
 
     // Cuando ponemos replace a true para que reemplace la url, no se ejecuta el cambio de url. Se evita que se pueda
@@ -27,6 +28,7 @@ export const PrivateNavBar = () => {
                 >
                     Miembros
                 </Link>
+
 
                 <div className="navbar-collapse">
                     <div className="navbar-nav">
