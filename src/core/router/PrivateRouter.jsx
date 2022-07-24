@@ -1,24 +1,20 @@
-import React from 'react';
-import {Route, Routes, Navigate} from "react-router-dom";
-import {MembersPage} from "../../scenes/membersPage";
-import {PrivateNavBar} from "../../layouts/privateNavBar.jsx";
-import {SearchPage} from "../../scenes/searchPage";
-import {AboutPage} from "../../scenes/aboutPage";
-import {MemberDetails} from "../../pods/members/memberDetails.jsx";
-import { NoPage} from "../../scenes/noPage.jsx";
+import { useContext } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+
+import { AuthContext } from "../../core/auth/index.js";
 
 
-export const PrivateRouter = () => {
-    return (
-        <>
-            <PrivateNavBar />
-            <Routes>
-                <Route path="/" element={<Navigate to="/members" />} />
-                <Route path="search" element={<SearchPage />} />
-                <Route path="members" element={<MembersPage />} />
-                <Route path="members/:id" element={<MemberDetails />} />
-                <Route path="/*" element={<NoPage />} />
-            </Routes>
-        </>
-    )
+
+// PrivateRoutes es un componente que se encarga de manejar el acceso a las páginas privadas.
+// Recibe children, lo que significa que es un Higher Order Component.
+export const PrivateRouter = ({ children }) => {
+
+    // Usamos useContext para saber si el usuario está autenticado.
+    const { logged } = useContext( AuthContext );
+
+    // Si el usuario no está autenticado, lo redirigimos a la página de login.
+    // Si el usuario está autenticado, se retorna children.
+    return (logged)
+        ? children
+        : <Navigate to="/login" />
 }
