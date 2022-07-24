@@ -6,8 +6,9 @@ import { members } from '../../data/members.data.js';
 export const GetMembersByOrganization = ( organization ) => {
     const validOrganization = ['lemoncode', 'orangecode'];
     if (!validOrganization.includes(organization)) {
-        throw new Error(`${organization} is not a valid organization`);
+        return null;
+    }else {
+        return members.filter(member => member.organization === organization);
     }
 
-    return members;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const MemberCard = ({ id, login, organization, avatar_url, url  }) => {
+export const MemberCardList = ({ id, login, organization, avatar_url, url  }) => {
     return (
         <div className="col">
 

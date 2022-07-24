@@ -31,12 +31,12 @@ export const MemberDetails = () => {
     return (
         <>
             <div className="container mt-5">
-                <h1>Member Detailssss {member[0].name}</h1>
+                <h1>Member Details {member[0].name}</h1>
                 <hr />
                 <div className="row">
                     <div className="col-md-6">
                         <img
-                            className="img-fluid"
+                            className="img-fluid animate__animated animate__fadeInLeft"
                             src={member[0].avatar_url}
                             alt={member[0].login}
                         />

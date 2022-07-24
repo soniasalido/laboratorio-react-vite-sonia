@@ -5,8 +5,12 @@ import {MembersList} from "../pods/members/membersList";
 export const MembersPage = () => {
     return (
         <>
-            <MembersList organization={'lemoncode'} />
-            <h1>Members Page Details</h1>
+            <div className="container">
+                <h1>Miembros de Lemoncode</h1>
+                <MembersList organization={'orangecode'} />
+                <MembersList organization={'lemoncode'} />
+            </div>
+
         </>
     )
 }

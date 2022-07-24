@@ -33,7 +33,7 @@ export const PrivateNavBar = () => {
 
                         <NavLink
                             className={ ({isActive}) => `nav-item nav-link  ${ isActive ? 'active':'' }` }
-                            to="/search"
+                            to="/search?q=lemoncode"
                         >
                             Buscar
                         </NavLink>
