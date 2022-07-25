@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { members } from '../../data/members.data.js';
+import { members } from '../../data/members.MockData.js';
 
 
 export const GetMemberByID = ( id ) => {

@@ -1,9 +1,11 @@
 
 import React from 'react';
-import { members } from '../../data/members.data.js';
+import { members } from '../../data/members.MockData.js';
 
+// Ejemplo de cómo obtener los datos de una organización -->
+// Los datos están un array de objetos en el documento members.MockData.js
 
-export const GetMembersByOrganization = ( organization ) => {
+export const GetMembersDataByOrganization = (organization ) => {
     const validOrganization = ['lemoncode', 'orangecode'];
     if (!validOrganization.includes(organization)) {
         return null;
