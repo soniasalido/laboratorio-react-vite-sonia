@@ -17,7 +17,7 @@ export const RickMortyPage = () => {
     return (
         <>
 
-            <h1>Rick & Morty</h1>
+            <h1>Rick & Morty!!!!</h1>
 
             {/* El padre llama al componente AddCategory mandándole una propiedad onNewCategory*/}
             <AddCategory
