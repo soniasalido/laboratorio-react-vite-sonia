@@ -1,6 +1,7 @@
 import { Navigate, useNavigate, useParams} from "react-router-dom";
 import { GetMemberByID } from "./getMemberByID"
 import { useMemo} from "react";
+import { MembersLayout} from "../../layouts/MembersLayout.jsx";
 
 
 export const MemberDetails = () => {
@@ -30,36 +31,39 @@ export const MemberDetails = () => {
 
     return (
         <>
-            <div className="container mt-5">
-                <h1>Member Details {member[0].name}</h1>
-                <hr />
-                <div className="row">
-                    <div className="col-md-6">
-                        <img
-                            className="img-fluid animate__animated animate__fadeInLeft"
-                            src={member[0].avatar_url}
-                            alt={member[0].login}
-                        />
+            <MembersLayout title="Members">
+                <div className="container mt-5">
+                    <h1>Member Details {member[0].name}</h1>
+                    <hr />
+                    <div className="row">
+                        <div className="col-md-6">
+                            <img
+                                className="img-fluid animate__animated animate__fadeInLeft"
+                                src={member[0].avatar_url}
+                                alt={member[0].login}
+                            />
+
+                        </div>
+
+                        <div className="col-md-6">
+                            <h3>{member[0].login}</h3>
+                            <a href={member[0].html_url} className="btn btn-warning btn-sm">
+                                Ver Github Profile
+                            </a>
+                            <hr />
+                            <button
+                                className="btn btn-dark"
+                                onClick={ onNavigateBack }
+                            >
+                                Volver
+                            </button>
+
+                        </div>
 
                     </div>
-
-                    <div className="col-md-6">
-                        <h3>{member[0].login}</h3>
-                        <a href={member[0].html_url} className="btn btn-warning btn-sm">
-                            Ver Github Profile
-                        </a>
-                        <hr />
-                        <button
-                            className="btn btn-dark"
-                            onClick={ onNavigateBack }
-                        >
-                            Volver
-                        </button>
-
-                    </div>
-
                 </div>
-            </div>
+            </MembersLayout>
+
         </>
     );
 }

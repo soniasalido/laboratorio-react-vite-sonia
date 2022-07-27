@@ -1,6 +1,7 @@
 
 import { AppRouter } from "./core/router/AppRouter.jsx";
 import {AuthProvider} from "./core/auth";
+import {AppTheme} from "./theme/";
 
 
 function App() {

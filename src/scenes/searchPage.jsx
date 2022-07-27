@@ -1,4 +1,5 @@
 import React from 'react';
+import { MembersLayout} from "../layouts/MembersLayout.jsx";
 import {MembersList} from "../pods/members/membersList";
 import { useForm } from '../core/customHooks/useForm.jsx';
 import { useNavigate, useLocation } from "react-router-dom";
@@ -37,40 +38,42 @@ export const SearchPage = () => {
 
     return (
         <>
-            <div className="container mt-5">
-                <h1>Search Page</h1>
+            <MembersLayout title="Members">
+                <div className="container mt-5">
+                    <h1>Search Page</h1>
 
-                <div className="row">
-                    <div className="col-5">
-                        <h4>Buscar</h4>
-                        <form onSubmit={ onSearchSubmit }>
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="lemoncode"
-                                name="searchOrganization"
-                                autoComplete="off"
-                                value={searchOrganization}
-                                onChange={onInputChange}
-                            />
+                    <div className="row">
+                        <div className="col-5">
+                            <h4>Buscar</h4>
+                            <form onSubmit={ onSearchSubmit }>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="lemoncode"
+                                    name="searchOrganization"
+                                    autoComplete="off"
+                                    value={searchOrganization}
+                                    onChange={onInputChange}
+                                />
 
-                            <button className="btn btn-warning mt-1">Buscar</button>
-                        </form>
-                    </div>
-                </div>
-
-                <hr />
-
-                <div className="row">
-                    <div className="col-7">
-                        <h4>Resultados</h4>
+                                <button className="btn btn-warning mt-1">Buscar</button>
+                            </form>
+                        </div>
                     </div>
 
-                    <MembersList organization={ q } />
+                    <hr />
+
+                    <div className="row">
+                        <div className="col-7">
+                            <h4>Resultados</h4>
+                        </div>
+
+                        <MembersList organization={ q } />
+                    </div>
+
+
                 </div>
-
-
-            </div>
+            </MembersLayout>
         </>
     )
 }

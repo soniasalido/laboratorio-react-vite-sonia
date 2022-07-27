@@ -1,18 +1,17 @@
 
 import React from 'react';
 import {NavBar} from "../layouts/navBar";
+import {AppLayout} from "../layouts/AppLayout.jsx";
+import {Typography} from "@mui/material";
+import {MailOutline} from "@mui/icons-material";
 
 export const AboutPage = () => {
     return (
         <>
             <NavBar />
-            <div className="container mt-5">
-                <h1>About</h1>
-                <hr />
-                <p>
-                    This is the about page.
-                </p>
-            </div>
+            <AppLayout title="About">
+                <Typography variant="h1">About</Typography>
+            </AppLayout>
         </>
 
     )
