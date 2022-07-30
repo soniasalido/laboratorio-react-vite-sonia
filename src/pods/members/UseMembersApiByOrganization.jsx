@@ -1,15 +1,15 @@
 
 import React from 'react';
-import { members } from '../../data/members.MockData.js';
+
 import {useEffect} from "react";
 
 // Ejemplo de cómo obtener los datos de una organización -->
 // Los datos están una API en la url de github
 
-export const GetMembersApiByOrganization = (organization ) => {
+export const UseMembersApiByOrganization = (organization ) => {
     const gitHubMembersUrl =  `https://api.github.com/orgs/${organization}/members`;
 
-    const { members, setMembers } = React.useState({});
+    const [ members, setMembers ] = React.useState([]);
 
 
     useEffect(() => {
@@ -21,7 +21,7 @@ export const GetMembersApiByOrganization = (organization ) => {
                 console.log(error);
             }
             );
-    }, [gitHubMembersUrl]);
+    }, [organization]);
 
     return members;
 }

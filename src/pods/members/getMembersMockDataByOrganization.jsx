@@ -12,5 +12,4 @@ export const GetMembersMockDataByOrganization = (organization ) => {
     }else {
         return members.filter(member => member.organization === organization);
     }
-
 }
