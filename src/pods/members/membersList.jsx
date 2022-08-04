@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-import { useMemo } from "react";
-//import { GetMembersMockDataByOrganization } from "./getMembersMockDataByOrganization.jsx";
-import { useMembersApiByOrganization } from "./useMembersApiByOrganization.jsx";
-import { MemberCardList } from "./memberCardList.jsx";
-
-export const MembersList = ({ organization }) => {
-    const [members , setMembers ] = React.useState([])
-    // Usamos el hook useMemo para memorizar el valor de members. Si el padre cambia, pide otro tipo de organization,
-    // entonces se vuelve a hacer una nueva petición. En caso contrario, se usa el valor que ya tenía memorizado.
-    // En la renderización si está vacío members (no existe esa organización), entonces no se retorna nada.
-    //const members = useMemo( () => GetMembersMockDataByOrganization( organization ), [ organization ]);
-
-    useMembersApiByOrganization(organization).then(results => {
-        setMembers(results);
-    });
-
-
-    // const members = useMemo( () => useMembersApiByOrganization( organization ), [ organization ]);
-=======
 import { useMemo, useState, useEffect } from "react";
 import React from "react";
 // import { GetMembersMockDataByOrganization } from "./getMembersMockDataByOrganization.jsx";
@@ -41,7 +21,6 @@ export const MembersList = ({ organization }) => {
         );
     }, [organization]);
 
->>>>>>> dev
 
     return (
         <div className="container mt-5 animate__animated animate__fadeIn">
