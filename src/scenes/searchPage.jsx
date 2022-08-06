@@ -1,7 +1,7 @@
 import React from 'react';
 import { MembersLayout} from "../layouts/MembersLayout.jsx";
 import {MembersList} from "../pods/members/membersList";
-import { useForm } from '../core/customHooks/useForm.jsx';
+import { useForm2 } from '../core/customHooks/useForm2.jsx';
 import { useNavigate, useLocation } from "react-router-dom";
 // Para facilitar el manejo de los query parameters, usamos una librería llamada query-string.
 // La instalamos con npm install query-string. Una vez instalado, lo importamos
@@ -21,10 +21,9 @@ export const SearchPage = () => {
     // Usamos el custom Hook useForm para crear un formulario.
     // Asignamos searchOrganization con el valor del query parameter (q), así, si cambiamos el query parameter desde la url,
     // se actualiza el valor de placeholder del input de búsqueda.
-    const { searchOrganization, onInputChange } = useForm({
+    const { searchOrganization, onInputChange } = useForm2({
         searchOrganization: q,
     });
-
 
     const onSearchSubmit = (e) => {
         e.preventDefault();
