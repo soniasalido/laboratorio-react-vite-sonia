@@ -12,7 +12,6 @@ export const MembersPage = () => {
                     <MembersList organization={'lemoncode'} />
                 </div>
             </MembersLayout>
-
         </>
     )
 }

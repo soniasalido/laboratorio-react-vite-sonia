@@ -6,7 +6,6 @@ import {AboutPage} from "../../scenes/aboutPage.jsx";
 import {PrivateRoutes} from "./PrivateRoutes.jsx";
 import { PrivateRouter} from "./PrivateRouter.jsx";
 import { PublicRouter} from "./PublicRouter.jsx";
-import {RickMortyPage} from "../../pods/rick&morty/RickMortyPage";
 
 
 export const AppRouter = () => {
@@ -16,8 +15,6 @@ export const AppRouter = () => {
                 <Route index element={<HomePage />} />
                 <Route path="home" element={<HomePage />} />
                 <Route path="about" element={<AboutPage />} />
-
-                <Route path="rick&morty" element={<RickMortyPage />} />
 
 
                 {/* Wrapeamos con PublicRouter para que solo se pueda acceder a la página de login si NO está autenticado  */}

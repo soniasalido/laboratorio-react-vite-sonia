@@ -41,6 +41,7 @@ export const NavBar = () => {
                         About
                     </NavLink>
 
+
                 </div>
             </div>
 
